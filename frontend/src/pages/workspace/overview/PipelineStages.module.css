@@ -1,0 +1,89 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: 28px minmax(140px, 200px) 110px 80px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.stage:last-child {
+  border-bottom: 0;
+}
+
+.stage[data-status='processing'] {
+  background: var(--accent-bg);
+}
+
+.index {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 20px;
+}
+
+.name {
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.time {
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 20px;
+  text-align: right;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  line-height: 20px;
+}
+
+.warnings {
+  margin: 0;
+  padding-left: 16px;
+  color: var(--warn);
+}
+
+@media (max-width: 860px) {
+  .stage {
+    grid-template-columns: 24px 1fr auto;
+    grid-template-areas:
+      'idx name status'
+      '. detail detail'
+      '. time time';
+  }
+
+  .index {
+    grid-area: idx;
+  }
+
+  .name {
+    grid-area: name;
+  }
+
+  .status {
+    grid-area: status;
+  }
+
+  .time {
+    grid-area: time;
+    text-align: left;
+  }
+
+  .detail {
+    grid-area: detail;
+  }
+}

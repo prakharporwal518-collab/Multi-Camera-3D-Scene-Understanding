@@ -1,0 +1,83 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  background: #111315;
+  border-radius: inherit;
+}
+
+.canvas {
+  position: absolute !important;
+  inset: 0;
+  touch-action: none;
+}
+
+.labelLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1px 5px;
+  background: rgb(15 17 19 / 0.82);
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  line-height: 16px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+.labelSelected {
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.labelMeasure {
+  border-color: var(--sample);
+  color: var(--sample);
+}
+
+.overlayTopLeft,
+.overlayBottomLeft {
+  position: absolute;
+  left: 8px;
+  display: flex;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.overlayTopLeft {
+  top: 8px;
+}
+
+.overlayBottomLeft {
+  bottom: 8px;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.overlayTopLeft > * {
+  pointer-events: auto;
+}
+
+.lost {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgb(17 19 21 / 0.92);
+}
